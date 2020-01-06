@@ -1,0 +1,23 @@
+[
+  {
+    "description": "这是一个带cookie信息的请求",
+    "request": {
+      "uri": "/post/with/headers",
+      "method": "post",
+      "headers":{
+        "Content-Type": "application/json"
+},
+      "json": {
+        "name": "lisi",
+        "sex": "woman"
+      }
+    },
+    "response": {
+      "json": {
+        "lisi":"seccess",
+        "status": "1"
+      }
+    }
+
+  }
+]

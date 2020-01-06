@@ -1,0 +1,11 @@
+下载moco
+https://repo1.maven.org/maven2/com/github/dreamhead/moco-runner/0.12.0/
+java -jar ./moco-runner-0.12.0-standalone.jar http -p 8888 -c json配置文件
+
+java -jar ./moco-runner-0.12.0-standalone.jar http -p 8888 -c starup1.json
+
+get请求带参数和不到参数访问请求
+http://127.0.0.1:8888/getdemo
+http://127.0.0.1:8888/getwithparam?name=zhangsan&age=18
+
+java -jar ./moco-runner-0.12.0-standalone.jar http -p 8888 -c startupGet.json
