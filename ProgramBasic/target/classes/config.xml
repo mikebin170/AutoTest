@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<students>
+    <country>中国</country>
+    <student age="19">
+        <address>北京市怀柔区</address>
+        <birthday>2018-05-04T22:36:55.468+08:00</birthday>
+        <friend age="20">
+            <address>北京市新城区</address>
+            <name>李四</name>
+        </friend>
+        <friend age="18">
+            <address>北京市朝阳区</address>
+            <name>王五</name>
+        </friend>
+        <name>张三</name>
+        <sex>男</sex>
+    </student>
+    <student age="18">
+        <address>北京市海淀</address>
+        <birthday>2018-05-04T22:36:55.468+08:00</birthday>
+        <friend age="20">
+            <address>北京市老城区</address>
+            <name>张三</name>
+        </friend>
+        <friend age="18">
+            <address>北京市朝阳区</address>
+            <name>赵六</name>
+        </friend>
+        <name>李四</name>
+        <sex>男</sex>
+    </student>
+</students>
