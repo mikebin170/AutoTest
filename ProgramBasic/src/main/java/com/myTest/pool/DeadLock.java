@@ -2,7 +2,8 @@ package com.myTest.pool;
 
 import java.util.HashMap;
 import java.util.Hashtable;
-
+//两个线程同时读取Resource资源,产生死锁
+//通过synchronized资源锁来解决线程安全问题
 public class DeadLock {
 	  public static void main(String[] args) {
 

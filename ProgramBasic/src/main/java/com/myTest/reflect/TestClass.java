@@ -2,7 +2,7 @@ package com.myTest.reflect;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
-
+//使用反射方式初始化类
 public class TestClass {
 
 	public static void main(String[] args) throws Exception {

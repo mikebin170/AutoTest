@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.apache.commons.beanutils.BeanUtils;
-
+//使用BeanUtils的copy方法初始化类
 public class TestCopy {
 	
 	public static void main(String[] args) {

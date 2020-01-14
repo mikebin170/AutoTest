@@ -9,7 +9,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
-
+//多线程计算,Callable可返回计算结果,future去接收这个结果
 class Task implements Callable<Long> {
 
 	private long begin;
@@ -41,7 +41,7 @@ public class TestCallabel {
 	public static void main(String[] args) {
 
 		int allcount = 100;
-		int pagesize = 1;
+		int pagesize = 10;
 
 		int page = allcount % pagesize == 0 ? allcount / pagesize : (allcount / pagesize) + 1;
 

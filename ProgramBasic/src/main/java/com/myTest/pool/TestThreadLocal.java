@@ -1,5 +1,6 @@
 package com.myTest.pool;
-
+//用空间来解决线程安全问题,线程共享sn
+//通过synchronized资源锁来解决线程安全问题
 public class TestThreadLocal {  
     // ①通过匿名内部类覆盖ThreadLocal的initialValue()方法，指定初始值    本質map
     private ThreadLocal<Integer> seqNum = new ThreadLocal<Integer>() {  

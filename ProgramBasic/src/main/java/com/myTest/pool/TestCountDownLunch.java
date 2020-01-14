@@ -2,7 +2,9 @@ package com.myTest.pool;
 
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
-
+//判断线程主程序是否结束？CountDownLatch线程计数器,
+//10个线程全部启动后,才会去执行
+//latch.countDown();循环递减
 public class TestCountDownLunch {
 
 	 public static void main(String[] args) throws InterruptedException {

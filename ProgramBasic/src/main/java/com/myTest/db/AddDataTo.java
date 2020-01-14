@@ -15,27 +15,28 @@ public class AddDataTo {
         String password = "123456";
         try {
             Class.forName(driver);
-            conn = DriverManager.getConnection(url,username,password);
+            conn = DriverManager.getConnection(url, username, password);
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
         }
         return conn;
     }
-    public static int insert(String id,String name,String passwd){
+
+    public static int insert(String id, String name, String passwd) {
         int i = 0;
-        Connection conn=getCon();
-        String sql ="insert into t_user (userid,username,password) values(?,?,?)";
+        Connection conn = getCon();
+        String sql = "insert into t_user (userid,username,password) values(?,?,?)";
         PreparedStatement psmt = null;
 
         try {
-            psmt = (PreparedStatement)conn.prepareStatement(sql);
-            psmt.setString(1,id);
-            psmt.setString(2,name);
-            psmt.setString(3,passwd);
+            psmt = (PreparedStatement) conn.prepareStatement(sql);
+            psmt.setString(1, id);
+            psmt.setString(2, name);
+            psmt.setString(3, passwd);
             i = psmt.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
-        }finally {
+        } finally {
             try {
                 psmt.close();
                 conn.close();
@@ -43,9 +44,10 @@ public class AddDataTo {
                 e.printStackTrace();
             }
         }
-        return  i;
+        return i;
     }
-    static class DbThread extends Thread{
+
+    static class DbThread extends Thread {
 
         public int begin;
         public int end;
@@ -60,11 +62,11 @@ public class AddDataTo {
 
         @Override
         public void run() {
-            System.out.println(Thread.currentThread().getName() + " "+begin);
+            System.out.println(Thread.currentThread().getName() + " " + begin);
             for (int i = begin; i < end; i++) {
-                System.out.println(Thread.currentThread().getName() + " "+i);
+                System.out.println(Thread.currentThread().getName() + " " + i);
                 //String uid =UUID.randomUUID().toString();
-                int reulst = AddDataToDB.insert(""+i,"testfan"+i,"test"+i);
+                int reulst = AddDataToDB.insert("" + i, "testfan" + i, "test" + i);
             }
         }
 
