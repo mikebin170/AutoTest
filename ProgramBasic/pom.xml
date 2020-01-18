@@ -67,8 +67,14 @@
             <artifactId>hutool-all</artifactId>
             <version>5.0.7</version>
         </dependency>
-
-
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>rest-assured</artifactId>
+        </dependency>
 
 
     </dependencies>
