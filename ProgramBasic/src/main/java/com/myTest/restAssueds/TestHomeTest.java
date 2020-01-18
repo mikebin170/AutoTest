@@ -1,7 +1,12 @@
 package com.myTest.restAssueds;
 
+import io.restassured.RestAssured;
+import io.restassured.http.ContentType;
 import org.junit.BeforeClass;
 import org.junit.Test;
+
+import java.util.HashMap;
+import java.util.Map;
 
 import static io.restassured.RestAssured.*;
 import static io.restassured.RestAssured.given;
@@ -21,6 +26,8 @@ public class TestHomeTest {
     @BeforeClass
     public static void setup(){
         useRelaxedHTTPSValidation();
+        RestAssured.baseURI="https://testerhome.com";
+        RestAssured.proxy("127.0.0.1",8080);
     }
 
     @Test
@@ -55,5 +62,33 @@ public class TestHomeTest {
         given().when().get("https://testerhome.com/api/v3/topics/10254.json").prettyPeek()
                 .then().statusCode(200)
                 .body("topic.title",equalTo("优质招聘汇总"));
+    }
+
+    /**
+     * 配置全局url和全局代理--全局配置一般放在setup方法中
+     * RestAssured.baseURI
+     * RestAssured.proxy
+     *
+     * */
+    @Test
+    public void testTestHomeJsonGolbal(){
+//        RestAssured.baseURI="https://testerhome.com";
+//        RestAssured.proxy("127.0.0.1",8080);
+        given().when().get("/api/v3/topics/10254.json").prettyPeek()
+                .then().statusCode(200)
+                .body("topic.title",equalTo("优质招聘汇总"));
+    }
+
+/**
+ * 发送post请求
+ * */
+    @Test
+    public void testTestHomePostJson(){
+        Map<String,Object> bodydata=new HashMap<>();
+        bodydata.put("username","admin");
+        bodydata.put("password","11111");
+        given().contentType(ContentType.JSON).body(bodydata)
+                .when().get("/api/v3/topics/10254.json").prettyPeek()
+                .then().statusCode(200);
     }
 }
